@@ -10,9 +10,24 @@ public class FirstLesson {
 
         int d = 12;
         System.out.println(decToHex(d));
+
+        int[] arrayForSort = {1, 3, 20, 14, 2, 5, 7, 19}, arrSort;
+        arrSort = bubbleSort(arrayForSort);
+
+        for (int i = 0; i < arrayForSort.length; i++) {
+            System.out.print(arrayForSort[i]);
+            System.out.print(" ");
+        }
+        System.out.println();
+
+        for (int i = 0; i < arrSort.length; i++) {
+            System.out.print(arrSort[i]);
+            System.out.print(" ");
+        }
+        System.out.println();
     }
 
-    public static String getMonthName(int monthNum){
+    public static String getMonthName(int monthNum) {
         return switch (monthNum) {
             case 1 -> "January";
             case 2 -> "February";
@@ -30,18 +45,18 @@ public class FirstLesson {
         };
     }
 
-    public static int searchValInArray(char[] array, char ch){
+    public static int searchValInArray(char[] array, char ch) {
         int index = -1;
 
-        for(int i = 0; i < array.length; i++){
-            if(array[i] == ch){
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == ch) {
                 index = i;
             }
         }
         return index;
     }
 
-    public static String reverseString(String str){
+    public static String reverseString(String str) {
         char[] arrayChar = str.toCharArray();
         String resultString = "";
         for (int i = arrayChar.length - 1; i >= 0; i--) {
@@ -61,5 +76,24 @@ public class FirstLesson {
             d = d / base;
         }
         return hex;
+    }
+
+    public static int[] bubbleSort(int[] sortArr) {
+        int[] arrSort = new int[sortArr.length];
+
+        for (int i = 0; i < sortArr.length; i++) {
+            arrSort[i] = sortArr[i];
+        }
+
+        for (int i = 0; i < arrSort.length - 1; i++) {
+            for (int j = 0; j < arrSort.length - i - 1; j++) {
+                if (arrSort[j + 1] < arrSort[j]) {
+                    int swap = arrSort[j];
+                    arrSort[j] = arrSort[j + 1];
+                    arrSort[j + 1] = swap;
+                }
+            }
+        }
+        return arrSort;
     }
 }
