@@ -51,6 +51,7 @@ public class FirstLesson {
         for (int i = 0; i < array.length; i++) {
             if (array[i] == ch) {
                 index = i;
+                return index;
             }
         }
         return index;
