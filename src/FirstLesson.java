@@ -4,6 +4,9 @@ public class FirstLesson {
 
         char[] arrayChar = {'a', 'b', 'c', 'd', '1'};
         System.out.println(searchValInArray(arrayChar, 'e'));
+
+        String str = "hello";
+        System.out.println(reverseString(str));
     }
 
     public static String getMonthName(int monthNum){
@@ -33,5 +36,14 @@ public class FirstLesson {
             }
         }
         return index;
+    }
+
+    public static String reverseString(String str){
+        char[] arrayChar = str.toCharArray();
+        String resultString = "";
+        for (int i = arrayChar.length - 1; i >= 0; i--) {
+            resultString = resultString + arrayChar[i];
+        }
+        return resultString;
     }
 }
