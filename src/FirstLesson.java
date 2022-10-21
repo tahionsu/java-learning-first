@@ -7,6 +7,9 @@ public class FirstLesson {
 
         String str = "hello";
         System.out.println(reverseString(str));
+
+        int d = 12;
+        System.out.println(decToHex(d));
     }
 
     public static String getMonthName(int monthNum){
@@ -45,5 +48,18 @@ public class FirstLesson {
             resultString = resultString + arrayChar[i];
         }
         return resultString;
+    }
+
+    public static String decToHex(int d) {
+        String digits = "0123456789ABCDEF";
+        if (d == 0) return "0";
+        int base = 16;
+        String hex = "";
+        while (d > 0) {
+            int digit = d % base;
+            hex = digits.charAt(digit) + hex;
+            d = d / base;
+        }
+        return hex;
     }
 }
