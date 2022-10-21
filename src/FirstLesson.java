@@ -11,8 +11,8 @@ public class FirstLesson {
         int d = 12;
         System.out.println(decToHex(d));
 
-        int[] arrayForSort = {1, 3, 20, 14, 2, 5, 7, 19}, arrSort;
-        arrSort = bubbleSort(arrayForSort);
+        int[] arrayForSort = {1, 3, 20, 14, 2, 5, 7, 19};
+        int[] arrSort = bubbleSort(arrayForSort);
 
         for (int i = 0; i < arrayForSort.length; i++) {
             System.out.print(arrayForSort[i]);
